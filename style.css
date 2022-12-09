@@ -4,7 +4,7 @@ body{
 .main_section200px{
     width: 200px;
     height: 150px;
-    background-color: black;
+    /* background-color: black; */
     background-size: cover;
     background-repeat: no-repeat;
     
@@ -280,4 +280,123 @@ body{
 }
 .str2{
     left: 25px;
+}
+.tottoro{
+    background-color: gray;
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    border-radius: 50%;
+}
+.tottoro_eye{
+    width: 10px;
+    height: 8px;
+    background-color: rgb(178, 180, 157);
+    position: absolute;
+    top: 12px;
+    left: 25px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.tottoro_eye::after{
+    content: '.';
+    position: absolute;
+    top: -30px;
+    left: 3px;
+    font-size: 40px;
+}
+.tottoro_ear{
+    background-color: gray;
+    width: 7px;
+    height: 25px;
+    position: absolute;
+    border-radius: 60% 20% 30% 60%/ 40% 20% 30% 40%;
+    top: 30px;
+    left: 180px;
+    rotate: 15deg;
+}
+.left_tottoro{
+    left: 160px;
+    rotate: -15deg;
+}
+.puzo_tottoro{
+    background-color: rgb(178, 180, 157);
+    height: 35px;
+    width: 30px;
+    top: 75px;
+    left: 160px;
+}
+.paw{
+    animation-name: leg_animation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.cat_head_animation,.tottoro_animation,.tail{
+    position: relative;
+    z-index: 6;
+    animation-name: head_animation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.tottoro_animation{
+    z-index: 0; 
+}
+.tail{
+    z-index: 0;
+}
+.main_section200px{
+    animation-name: all_animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes leg_animation{
+    25%{
+        transform: rotate(-20deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(20deg); 
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes head_animation{
+    25%{
+        transform: translate(0,-2px);
+    }
+    50%{
+        transform: translate(0,0) ;
+    }
+    75%{
+        transform: translate(0,2px); 
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+@keyframes all_animation{
+    0%{
+        transform: translate(-200px, 0);
+    }
+    25%{
+        transform: translate(25%, -10px);
+    }
+    50%{
+        transform: translate(50%,0) ;
+    }
+    75%{
+        transform: translate(75%,10px); 
+    }
+    100%{
+        transform: translate(calc(100% + 200px),0);
+    }
 }
